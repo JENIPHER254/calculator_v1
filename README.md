@@ -6,4 +6,4 @@ Basic calculator using different languages, libraies and frameworks
 
 | React-Calc App                                      |
 | --------------------------------------------------- |
-| ![plot](./react-calc/src/assets/design/design1.png) |
+| ![plot](./react-calc/src/assets/design/img.png) |

@@ -31,6 +31,9 @@
 .height-80 {
   height: 80vh;
 }
+.max-w-75{
+  width:46vh;
+}
 .btn-hover:hover,
 .active {
   background-color: #6c63ff;

@@ -1,7 +1,7 @@
 import React from "react";
 const Calc = ()=>{
     return<>
-       <div className="bg-blue2">Calc</div>
+       <div className="">Calc</div>
     </>
 }
 export default Calc;

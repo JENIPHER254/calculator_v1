@@ -22,7 +22,7 @@ const reducerFn = (
       equation: state.equation,
       recent1: state.recent1,
       recent2: state.recent2,
-      currentIem: state.result,
+      currentIem: 16,
     };
   }
   if (action.type === "CLEAR") {

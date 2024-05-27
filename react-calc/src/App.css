@@ -7,7 +7,12 @@
 .colo4:hover {
   color: grey;
 }
-
+.fade1 {
+  color:#898C96;
+}
+.fade2 {
+  color:#6C707C;
+}
 .bg-blue1 {
   background-color: #1d293a;
 }
@@ -26,7 +31,8 @@
 .height-80 {
   height: 80vh;
 }
-.btn-hover:hover, .active {
+.btn-hover:hover,
+.active {
   background-color: #6c63ff;
 }
 .calc-btn {

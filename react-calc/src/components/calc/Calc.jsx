@@ -2,7 +2,9 @@ import React from "react";
 import { IoMdAdd } from "react-icons/io";
 import { FaDivide, FaMinus, FaPercentage, FaTimes } from "react-icons/fa";
 import { BsPlusSlashMinus } from "react-icons/bs";
+
 const Calc = () => {
+
   return (
     <>
       <div className="grid grid-cols-4 gap-2">

@@ -1,9 +1,11 @@
 import React from "react";
+import { useSelector } from "react-redux";
 const Results = () => {
+  const test = useSelector((state) => state.test);
   return (
     <>
       <div className="justify-end items-end flex my-5 mx-1">
-        <h1 className="text-4xl">124465</h1>
+        <h1 className="text-4xl">{test}</h1>
       </div>
     </>
   );

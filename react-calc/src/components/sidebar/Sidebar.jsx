@@ -49,7 +49,7 @@ const Sidebar = () => {
           </div>
           <div className="text-center mt-5 colo4 font-semibold ">
             Need some Help? <br />
-            Check out my{" "}
+            Check out my
             <a href="http://" target="_blank" rel="noopener noreferrer">
               GITHUB...
             </a>

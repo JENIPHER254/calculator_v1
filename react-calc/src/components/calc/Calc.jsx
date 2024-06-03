@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { IoMdAdd } from "react-icons/io";
 import {
   FaBackspace,
@@ -12,6 +12,7 @@ import { FaEquals } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 const Calc = () => {
   const dispatch = useDispatch();
+  const [newItemName, setNewItemName] = useState("");
   const solution = () => {
     dispatch({ type: "SOL" });
   };
@@ -21,9 +22,18 @@ const Calc = () => {
   const del = () => {
     dispatch({ type: "DEL" });
   };
-  const update = (val) => {
-    dispatch({ type: "UPDATE", payload: val });
-   
+  const update = (val, name) => {
+    const itemName = name;
+
+    if (itemName === newItemName && newItemName === "equ") {
+      setNewItemName(itemName);
+      console.log(itemName);
+      return;
+    } else {
+      setNewItemName(itemName);
+      console.log(itemName);
+      dispatch({ type: "UPDATE", payload: val });
+    }
   };
   return (
     <>
@@ -34,13 +44,13 @@ const Calc = () => {
 
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update("%")}
+          onClick={() => update("%", "equ")}
         >
           <FaPercentage />
         </button>
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update("/")}
+          onClick={() => update("/", "equ")}
         >
           <FaDivide />
         </button>
@@ -49,85 +59,85 @@ const Calc = () => {
         </button>
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update("7")}
+          onClick={() => update("7", "val")}
         >
           7
         </button>
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update("8")}
+          onClick={() => update("8", "val")}
         >
           8
         </button>
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update("9")}
+          onClick={() => update("9", "val")}
         >
           9
         </button>
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update("*")}
+          onClick={() => update("*", "equ")}
         >
           <FaTimes />
         </button>
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update("4")}
+          onClick={() => update("4", "val")}
         >
           4
         </button>
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update("5")}
+          onClick={() => update("5", "val")}
         >
           5
         </button>
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update("6")}
+          onClick={() => update("6", "val")}
         >
           6
         </button>
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update("-")}
+          onClick={() => update("-", "equ")}
         >
           <FaMinus />
         </button>
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update("-")}
+          onClick={() => update("1", "val")}
         >
           1
         </button>
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update("2")}
+          onClick={() => update("2", "val")}
         >
           2
         </button>
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update("3")}
+          onClick={() => update("3", "val")}
         >
           3
         </button>
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update("+")}
+          onClick={() => update("+", "equ")}
         >
           <IoMdAdd />
         </button>
         <button
           className="calc-btn rounded p-5 col-span-2 text-2xl"
-          onClick={() => update("0")}
+          onClick={() => update("0", "val")}
         >
           0
         </button>
         <button
           className="calc-btn rounded p-5 text-2xl"
-          onClick={() => update(".")}
+          onClick={() => update(".", "val")}
         >
           <GoDotFill />
         </button>

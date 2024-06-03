@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import {evaluate} from "mathjs";
+import {evaluate} from "mathjs"
 
 /**
  *

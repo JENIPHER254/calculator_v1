@@ -18,12 +18,14 @@ const reducerFn = (
   action
 ) => {
   if (action.type === "SOL") {
+    const ans = evaluate(state.equation);
+    const final_ans = ans.toString();
     return {
       result: state.result,
       equation: state.equation,
       recent1: state.recent1,
       recent2: state.recent2,
-      currentIem: evaluate(state.equation),
+      currentIem: final_ans,
     };
   }
   if (action.type === "CLEAR") {
@@ -36,12 +38,14 @@ const reducerFn = (
     };
   }
   if (action.type === "DEL") {
+    const delString = state.equation.slice(0,-1);
+    const lastChar = delString[delString.length-1];
     return {
       result: state.result,
-      equation: state.equation,
+      equation: delString,
       recent1: state.recent1,
       recent2: state.recent2,
-      currentIem: state.currentIem,
+      currentIem: lastChar,
     };
   }
   if (action.type === "UPDATE") {

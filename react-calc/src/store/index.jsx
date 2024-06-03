@@ -20,13 +20,24 @@ const reducerFn = (
   if (action.type === "SOL") {
     const ans = evaluate(state.equation);
     const final_ans = ans.toString();
-    return {
-      result: state.result,
-      equation: state.equation,
-      recent1: state.recent1,
-      recent2: state.recent2,
-      currentIem: final_ans,
-    };
+    if(state.recent1 === state.equation ){
+      return {
+        result: state.result,
+        equation: state.equation,
+        recent1: state.recent1,
+        recent2: state.recent2,
+        currentIem: final_ans,
+      };
+    }else{
+      return {
+        result: state.result,
+        equation: state.equation,
+        recent1: state.equation + " = " + final_ans,
+        recent2: state.recent1,
+        currentIem: final_ans,
+      };
+    }
+   
   }
   if (action.type === "CLEAR") {
     return {

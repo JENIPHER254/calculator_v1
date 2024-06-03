@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+import {evaluate} from "mathjs";
 
 /**
  *
@@ -22,7 +23,7 @@ const reducerFn = (
       equation: state.equation,
       recent1: state.recent1,
       recent2: state.recent2,
-      currentIem: 16,
+      currentIem: evaluate(state.equation),
     };
   }
   if (action.type === "CLEAR") {
